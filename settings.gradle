@@ -1,0 +1,4 @@
+rootProject.name = 'org.young.im'
+include 'y-netty-cose-server'
+include 'y-netty-cose-client'
+

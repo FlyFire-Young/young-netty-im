@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" th:href="@{/y-im-cus/css/reset.css}"/> <!-- CSS reset -->
+    <link rel="stylesheet" th:href="@{/y-im-cus/css/headerstyle.css}"/> <!-- Resource style -->
+
+    <script th:src="@{/y-im-cus/js/modernizr.js}"></script> <!-- Modernizr -->
+
+    <script type="text/javascript" th:src="@{/y-im-cus/js/jquery-2.1.1.js}"></script>
+    <script type="text/javascript" th:src="@{/y-im-cus/js/main.js}"></script>
+    <title>header</title>
+    <script>
+        $(function () {
+            $("#realContentCus").load("/auth/chat");
+        })
+    </script>
+</head>
+<body>
+<header class="cd-header">
+    <a href="#0" class="cd-3d-nav-trigger">
+        Menu
+        <span></span>
+    </a>
+</header> <!-- .cd-header -->
+
+<main>
+    <div id="realContentCus"></div>
+</main>
+
+<nav class="cd-3d-nav-container">
+    <ul class="cd-3d-nav">
+        <li class="cd-selected">
+            <a href="#0">聊天首页</a>
+        </li>
+        <li style="float: right">
+            <a th:href="@{/userLogout(username=${username})}">退出</a>
+        </li>
+    </ul> <!-- .cd-3d-nav -->
+
+    <span class="cd-marker color-1"></span>
+</nav> <!-- .cd-3d-nav-container -->
+
+</body>
+</html>

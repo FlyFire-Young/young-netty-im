@@ -1,0 +1,35 @@
+netty:
+  port: 12349
+  basePackage: org.young.base.service
+  clientName: nettyClient
+  url: 127.0.0.1
+server:
+  port: 8084
+spring:
+  jpa:
+    hibernate:
+        ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+  datasource:
+    url: jdbc:mysql://localhost:3306/ychat?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+    check-template: true
+    content-type: text/html
+    enabled: true
+    encoding: utf-8
+    mode: HTML5
+    suffix: .html
+debug: false
+logging:
+  level: INFO
+  pattern:
+    level: INFO
+
+

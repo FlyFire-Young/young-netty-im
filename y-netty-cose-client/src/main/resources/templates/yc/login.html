@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>young-登录</title>
+    <link rel="stylesheet" th:href="@{/j-b-1/css/style.css}"/>
+    <script th:src="@{/j-b-1/js/jquery.min.js}"></script>
+    <!--背景图片自动更换-->
+    <script th:src="@{/j-b-1/js/supersized.3.2.7.min.js}"></script>
+    <script th:src="@{/j-b-1/js/supersized-init.js}"></script>
+    <!--表单验证-->
+    <script th:src="@{/j-b-1/js/jquery.validate.min.js}"></script>
+    <script th:src="@{/j-b-1/js/common.js}"></script>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>登录</h1>
+
+    <div class="connect">
+        <p>www.example.com</p>
+    </div>
+
+    <form th:action="@{/loginValid}" th:method="'post'" id="loginForm">
+        <div>
+            <input type="text" name="y_username" class="username" placeholder="用户名" autocomplete="off"/>
+        </div>
+        <div>
+            <input type="password" name="y_password" class="password" placeholder="密码" oncontextmenu="return false"
+                   onpaste="return false"/>
+        </div>
+        <button id="submit" type="submit">登 陆</button>
+    </form>
+
+    <a href="/y/register">
+        <button type="button" class="register-tis">还有没有账号？</button>
+    </a>
+    <p th:if="${#httpServletRequest.getParameter('error') eq '1'}"
+       style="color:#CC0000; font-size:14px;text-align: center;margin-top: 10px">用户名或密码错误</p>
+    <p th:if="${#httpServletRequest.getParameter('result') eq 'suc'}"
+       style="text-shadow: 0 1px 3px green; font-size:14px;text-align: center;margin-top: 10px">注册成功，请登录</p>
+</div>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+    <p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+</div>
+</body>
+</html>
